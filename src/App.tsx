@@ -1,24 +1,29 @@
-import { useState } from 'react'
+import Nav from './Componentes/Nav'
+import Herosection from './Componentes/Herosection'
+import TechnologiesSection from './Componentes/TechnologiesSection'
+import Proyectos from './Componentes/Proyectos'
+import Estudios from './Componentes/Estudios' 
+import Footer from './Componentes/Footer'
 import './App.css'
 
-
+const PrimaryColor = '#808080'; 
+const TextColor = '#ffffff';  
 function App() {
-  const [visible, setVisible] = useState(false)
+  
+ return (
+     <div style={{ backgroundColor: PrimaryColor, color: TextColor, minHeight: '100vh' }}>
+       <Nav/>
+       <main className="container">
+         <Herosection/>
+         <TechnologiesSection />
+         <Proyectos/>
+         <Estudios/>
+       </main>
 
-  return (
-    <>
-      <div>
-        <button onClick={() => setVisible(!visible)}>
-          Click me
-        </button>
-        {visible && 
-        <>
-          <h1 className='Titulo'>Rosibel Campos/developer</h1>
-        </>
-        }
-      </div>
-    </>
-  )
-}
+       <Footer />
 
-export default App
+     </div>
+   );
+ };
+
+export default App;

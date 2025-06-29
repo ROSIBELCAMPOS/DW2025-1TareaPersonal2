@@ -1,49 +1,129 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #808080; /* Gray background */
+    color: #ffffff; /* White text */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Container for main content */
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Navbar specific styles */
+.navbar-content a:hover {
+    color: #40e0d0; /* Light turquoise on hover */
 }
 
-.card {
-  padding: 2em;
+/* Section spacing */
+section {
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    position: relative; /* For the border-top */
 }
 
-.read-the-docs {
-  color: #888;
+.tarjeta{
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgb(88, 88, 97);
+    box-shadow: 0px 1px 10px rgba(#40e0d0, 0.3);
+    cursor: default;
+    transition: all 400ms ease;
 }
 
-.Titulo{
-  font-family: cursive;
-  font-size: 2,5rem;
-  color:indigo;
+.tarjeta:hover{
+    box-shadow: 5px 5px 20px rgba(#40e0d0,0.5);
+    transform: translateY(-3%);
+    
+}
 
+#solop{
+    line-height: 1.5;
+    color:  rgb(ffffff);
+}
+
+#soloh3{
+    font-weight: 400;
+    margin-bottom: 15px;
+    
+}
+
+#soloa{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: #40e0d0;
+    border: 1px solid #40e0d0;
+    border-radius: 4px;
+    transition: all 400ms ease;
+}
+
+#soloa:hover{
+    background: #40e0d0;
+    color: #fff;
+
+}
+
+/* Responsive adjustments */
+@media (max-width: 1300px) {
+    .navbar-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .navbar-content a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+
+    .technologies-section div {
+        flex-basis: 45%; /* Two items per row */
+        margin-bottom: 2rem;
+    }
+
+    /* Adjust layout for experience and education sections on small screens */
+    #experience > div,
+    #education > div {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1300px) {
+    .technologies-section div {
+        flex-basis: 100%; /* One item per row */
+    }
+}
+
+.educacion {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+  
+@media (min-width: 1300px) {
+    .educacion div {
+        flex-direction: row;
+    }
 }

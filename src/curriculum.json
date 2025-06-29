@@ -1,0 +1,54 @@
+{
+  "conceptosBasicos": {
+    "nombre": "Rosibel N. Campos P.", 
+    "etiqueta": "Programador Jr", 
+    "imagen": "/iconos/IMG_20220726_103614_609.jpg", 
+    "email": "rosibelcampos85@gmail.com", 
+    "resumen": "Futura Ingeniera en Informática. Orientada a resultado, seguimiento, motivada para aprender nuevas destreas y aptitudes. Tecnológicamente en un nivel Jr en el área de Backend",
+    "perfiles": [{
+      "red": "LinkedIn", 
+      "usuario": "Rosibel Campos", 
+      "url": "https://www.linkedin.com/in/rosibel-c-4a97351bb"
+    },
+    {
+      "red": "GitHub", 
+      "usuario": "ROSIBELCAMPOS", 
+      "url": "https://github.com/ROSIBELCAMPOS"
+    }]
+  },
+
+  "educacion": {
+    "institucion": "Universida Nacional Experimental de Guayana (UNEG)",
+    "urlLogoUni": "/iconos/LogoUneg.png",
+    "urlLogo": "/iconos/graduacion.png",
+    "carrera": "Ingenieria en Informatica",
+    "nivel": "9no Semestre"
+  },
+  "habilidades": [{
+    "name": "Web Development",
+    "level": "Jr",
+    "url": [
+    "/iconos/html.png",
+    "/iconos/css.png",
+    "/iconos/icons8-js-48.png",
+    "/iconos/icons8-react-48.png",
+    "/iconos/icons8-nodejs-64.png",
+    "/iconos/icons8-expresar-js-50.png"
+    ],
+    "Lenguajes": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Express.js"
+    ]
+    }],
+    "proyectos": {
+    "nombre": "TODOEVENTOS", 
+    "imagen": "/iconos/show.png", 
+    "descripcion": " proyecto realizado en la simulacion de NoContry, con tecnologias: react, nodejs, expressjs, postgresql",
+    "url": "https://todoev.netlify.app/"
+  }
+}
+
