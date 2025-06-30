@@ -35,7 +35,7 @@
     "/iconos/icons8-nodejs-64.png",
     "/iconos/icons8-expresar-js-50.png"
     ],
-    "Lenguajes": [
+    "lenguajes": [
       "HTML",
       "CSS",
       "JavaScript",

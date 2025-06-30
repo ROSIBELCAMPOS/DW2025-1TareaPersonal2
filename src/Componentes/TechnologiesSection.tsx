@@ -1,7 +1,8 @@
 import curriculum from '../curriculum.json' with { type: "json" };
 const {habilidades} = curriculum;
 
-const { url, lenguajes} = habilidades;
+// Assuming you want the first object in the habilidades array
+const { url, lenguajes } = habilidades[0];
 
 
 const TextColor = '#ffffff'; // White
@@ -15,28 +16,28 @@ function TechnologiesSection() {
             <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap' }}>
                 
                 <div style={{ textAlign: 'center' }}>
-                    <img src={urlCss} alt="CSS" style={{ width: '80px', height: '80px', filter: 'invert(1)' }} />
-                    <p style={{ marginTop: '0.5rem', color: TextColor }}>{Css}</p>
+                    <img src={url[1]} alt="CSS" style={{ width: '80px', height: '80px', filter: 'invert(1)' }} />
+                    <p style={{ marginTop: '0.5rem', color: TextColor }}>{lenguajes[1]}</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                    <img src={urlJs} alt="JavaScript" style={{ width: '80px', height: '80px', filter: 'invert(1)' }} />
-                    <p style={{ marginTop: '0.5rem', color: TextColor }}>{Js}</p>
+                    <img src={url[2]} alt="JavaScript" style={{ width: '80px', height: '80px', filter: 'invert(1)' }} />
+                    <p style={{ marginTop: '0.5rem', color: TextColor }}>{lenguajes[2]}</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                    <img src={urlHtml} alt="HTML" style={{ width: '80px', height: '80px', filter: 'invert(1)' }} />
-                    <p style={{ marginTop: '0.5rem', color: TextColor }}>{Html}</p>
+                    <img src={url[0]} alt="HTML" style={{ width: '80px', height: '80px', filter: 'invert(1)' }} />
+                    <p style={{ marginTop: '0.5rem', color: TextColor }}>{lenguajes[0]}</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                    <img src={urlNode} alt="Node.js" style={{ width: '80px', height: '80px', filter: 'invert(1)' }} />
-                    <p style={{ marginTop: '0.5rem', color: TextColor }}>{Node}</p>
+                    <img src={url[4]} alt="Node.js" style={{ width: '80px', height: '80px', filter: 'invert(1)' }} />
+                    <p style={{ marginTop: '0.5rem', color: TextColor }}>{lenguajes[4]}</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                    <img src={urlExpress} alt="Node.js" style={{ width: '80px', height: '80px', filter: 'invert(1)' }} />
-                    <p style={{ marginTop: '0.5rem', color: TextColor }}>{Express}</p>
+                    <img src={url[5]} alt="Node.js" style={{ width: '80px', height: '80px', filter: 'invert(1)' }} />
+                    <p style={{ marginTop: '0.5rem', color: TextColor }}>{lenguajes[5]}</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                    <img src={urlReact} alt="React" style={{ width: '80px', height: '80px', filter: 'invert(1)' }} />
-                    <p style={{ marginTop: '0.5rem', color: TextColor }}>{React}</p>
+                    <img src={url[3]} alt="React" style={{ width: '80px', height: '80px', filter: 'invert(1)' }} />
+                    <p style={{ marginTop: '0.5rem', color: TextColor }}>{lenguajes[3]}</p>
                 </div>
             </div>
         </section>
