@@ -1,5 +1,5 @@
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa'; // Install react-icons: npm install react-icons
-import curriculum from '../curriculum.json' with { type: "json" };
+import curriculum from '../../public/curriculum.json' with { type: "json" };
 const { conceptosBasicos } = curriculum;
 const { perfiles, nombre, email } = conceptosBasicos;
 

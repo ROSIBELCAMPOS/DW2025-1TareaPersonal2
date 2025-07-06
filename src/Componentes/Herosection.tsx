@@ -1,38 +1,35 @@
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa'; 
-import{ useEffect, useState } from 'react';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
 import type { InterfaceHerosection } from '../Interface/InterfaceHerosection.tsx';
-//import curriculum from '../curriculum.json' with { type: "json" };
 import axios from 'axios';
-//const {conceptosBasicos} = curriculum;
-//const {imagen,nombre, email, perfiles, resumen } = conceptosBasicos;
-const TextColor = '#ffffff'; // White
-const AccentColor = '#40e0d0'; // Turquoise (light)
+
+const TextColor = '#ffffff';
+const AccentColor = '#40e0d0';
 
 function Herosection() {
 
-    interface estados{
-        herosection:InterfaceHerosection[];
-    }
-
-    const [info, setInfo] = useState<estados['herosection']>([]);
+    const [info, setInfo] = useState<InterfaceHerosection | null>(null);
 
     const infoData = async () => {
-        const response = await axios.get("../curriculum.json");
-        const {conceptosBasicos} = response.data;
-        setInfo(conceptosBasicos);
-    }
+        try {
+            const response = await axios.get("/curriculum.json");
+            const { conceptosBasicos } = response.data;
+            setInfo(conceptosBasicos);
+        } catch (error) {
+            console.error("Error al cargar los datos:", error);
+        }
+    };
 
     useEffect(() => {
         infoData();
-    });
+    }, []);
 
-    info.map(conceptosBasicos => {
-        const {imagen,nombre, email, perfiles, resumen } = conceptosBasicos;
+    if (!info) return <p>Cargando...</p>;
 
-  return (
-  <div>
+    const { imagen, nombre, email, perfiles, resumen } = info;
 
-      <section id="hero" style={{ padding: '4rem 2rem', textAlign: 'center' }}>
+    return (
+        <section id="hero" style={{ padding: '4rem 2rem', textAlign: 'center' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <img
                     src={imagen}
@@ -50,27 +47,25 @@ function Herosection() {
                     <a href={`mailto:${email}`} style={{ color: AccentColor, textDecoration: 'none' }}>
                         <FaEnvelope size={24} /> {email}
                     </a>
-                    {perfiles && perfiles[0] && (
-                      <a href={perfiles[0].url} target="_blank" rel="noopener noreferrer" style={{ color: AccentColor }}>
-                          <FaGithub size={24} />
-                      </a>
-                    )}
-                    {perfiles && perfiles[1] && (
-                      <a href={perfiles[1].url} target="_blank" rel="noopener noreferrer" style={{ color: AccentColor }}>
-                          <FaLinkedin size={24} />
-                      </a>
-                    )}
+                    {perfiles && perfiles.map((perfil, i) => (
+                        <a
+                            key={i}
+                            href={perfil.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: AccentColor }}
+                        >
+                            {perfil.red === "GitHub" && <FaGithub size={24} />}
+                            {perfil.red === "LinkedIn" && <FaLinkedin size={24} />}
+                        </a>
+                    ))}
                 </div>
                 <p style={{ maxWidth: '600px', margin: '2rem auto 0', lineHeight: '1.6', color: TextColor }}>
                     {resumen}
                 </p>
             </div>
         </section>
-
-  </div>
-  
-)
-});
+    );
 }
 
 export default Herosection;

@@ -1,4 +1,4 @@
-import curriculum from '../curriculum.json' with { type: "json" };
+import curriculum from '../../public/curriculum.json' with { type: "json" };
 const { educacion } = curriculum;
 
 const { institucion, urlLogoUni, urlLogo, carrera, nivel } = educacion;
